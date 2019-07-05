@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<style type="text/css">
+
+
+@keyframes tap {
+	0%, 50%, 100% {
+		transform: rotate(10deg) scale(var(--scale));
+		
+	}
+	
+	45% {
+		transform: rotate(45deg) scale(var(--scale));
+		
+	}
+	
+}
+
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hand {
+	width: 640px;
+	height: 320px;
+	position: relative;
+}
+
+.hand::before {
+	content:close-quote;
+	width: 560px;
+	height: 180px;
+	position: absolute;
+	background-color: black;
+	border-radius: 160px 40px;
+	filter: blur(20px) opacity(0.3);
+	top: 160px;
+}
+
+.palm {
+	position: absolute;
+	height: 240px;
+	width: 320px;
+	background-color: #ffcd94;
+	right: 0px;
+	border-radius: 40px 160px;
+}
+
+.thumb {
+	position: absolute;
+	height: 128px;
+	width: 385px;
+	background-color: #ffcd94;
+	right: -4px;
+	bottom: 50px;
+	transform-origin: calc(100% - 80px) 80px;
+	transform: rotate(-20deg);
+	border-radius: 120px 80px 80px 40px;
+	border-bottom: 8px solid rgba(0,0,0,0.1);
+	border-left: 8px solid rgba(0,0,0,0.1);
+}
+
+.thumb::before {
+	background-color: #ffffff;
+	content: close-quote;
+	position: absolute;
+	height: 76px;
+	width: 76px;
+	bottom: 0px;
+	left: 20px;
+	border-radius: 60% 10% 10% 30%;
+	border-right: 4px solid rgba(0,0,0,0.1);
+}
+
+.finger {
+	background-color: #ffcd94;
+	position: absolute;
+	height: 140px;
+	width: 256px;
+	right:210px;
+	bottom: 170px;
+	transform: rotate(10deg) scale(var(--scale));
+	--scale: calc(1 -(5 - var(--n)) * 0.2);
+	transform-origin: 100% 80px;
+	filter: brightness(calc(100% - (5 - var(--n)) * 10%));
+	animation: tap 1.2s infinite;
+	animation-delay: calc(var(--n) - 2) * 0.1s;
+}
+
+.finger::before {
+	content: close-quote;
+	position: absolute;
+	height: 120px;
+	width: 360px;
+	background-color: #ffcd94;
+	top: -9px;
+	right: 224px;
+	border-radius: 80px;
+	transform: rotate(-60deg);
+	transform-origin: calc(100% - 40px) 40px;
+}
+
+.finger:nth-of-type(3) {
+	--n: 2;
+}
+.finger:nth-of-type(4) {
+	--n: 3;
+}
+.finger:nth-of-type(5) {
+	--n: 4;
+}
+.finger:nth-of-type(6) {
+	--n: 5;
+}
+
+
+
+
+
+
+
+
+</style>
+<body>
+
+<div class="hand">
+	<span class="palm" ></span>
+	<span class="thumb" >/</span>
+	<span class="finger" ></span>
+	<span class="finger" ></span>
+	<span class="finger" ></span>
+	<span class="finger" ></span>
+</div>
+
+
+</body>
+</html>

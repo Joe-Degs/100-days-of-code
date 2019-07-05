@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+
+<style type="text/css">
+.a { 
+	background-color: fuchsia;
+	width: 200px;
+	height: 200px;
+	animation: grow 3s;
+}
+.b {
+	background-color: lime;
+	width: 200px;
+	height: 200px;
+	transition: width 3s;
+}
+.b:hover {
+	width: 1000px;
+}
+
+@keyframes grow {
+	from {
+	width: 200px;
+	}
+	to {
+	width: 1000px;
+	}
+}
+
+
+
+
+</style>
+
+
+<body>
+
+<div class="a" ></div>
+<div class="b" ></div>
+
+</body>
+</html>
