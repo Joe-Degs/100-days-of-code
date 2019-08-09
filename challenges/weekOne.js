@@ -121,8 +121,80 @@ console.log(reverseStr("Hello Ghana"))
 
 
 //CHALLENGE 7
-function palindrome(str) {
+/*function palindrome(str) {
 	let reversed = str.split("").reverse().join("");
 	return reversed === str;
 }
-console.log(palindrome('aba'));
+console.log(palindrome('aba'));*/
+
+
+
+
+//CHALLENGE 8
+
+/*function adder(arr) {
+	let arr1 = parseInt(arr.join('')) + 1;
+	let result = arr1.toString().split('');
+	return result.map(item => parseInt(item));
+	
+}
+
+console.log(adder([9,9,9]));*/
+
+
+//CHALLENGE 9 - NON-REPEATING STRING
+
+/*function nonRepeatingString(str) {
+	let chars = {};
+	let result;
+	
+	for (let ch of str) {
+		if(!chars[ch]) {
+			chars[ch] = 1;
+		} else {
+			chars[ch] += 1;
+		}
+	}
+	
+	for (let pr in chars) {
+		if(chars[pr] === 1) {
+			result = pr;
+			break;
+		}
+	}
+	
+	return result;
+}
+
+console.log(nonRepeatingString('jjiityeebxbnsshhssia'));*/
+
+
+
+
+
+
+/*//CHALLENGE 10 
+	*Highest Ocurring Number In An array*/
+	
+function highestOcurrer(arr) {
+	let chars = {};
+	let max = 0;
+	let maxChar;
+	
+	for(let ch of arr) {
+		if(!chars[ch]) {
+			chars[ch] = 1;
+		} else {
+			chars[ch]++;
+		}
+	}
+	
+	for (let pr in chars) {
+		if(chars[pr] > max) {
+			max = chars[pr];
+			maxChar = pr;
+		}
+	}
+return maxChar;
+}
+console.log(highestOcurrer(['a', 'a', 'b', 'b', 'b', 'c', 'd', 'd', 'd', 'd']));
